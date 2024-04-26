@@ -9,6 +9,10 @@
     .buttonContainer {
         display: flex;
         flex-direction: column;
+
+        .buttonItemContainer {
+            display: flex;
+        }
     }
 
     .checkBoxContainer {

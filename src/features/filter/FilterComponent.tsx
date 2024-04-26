@@ -1,16 +1,23 @@
+import {ButtonsData, CheckBoxData} from '../../common';
+
 import s from './FilerComponent.module.css';
+import {ButtonItem} from './item/ButtonItem.tsx';
+import {CheckBoxItem} from "./item/CheckBoxItem.tsx";
 
 export const FilterComponent = () => {
   return (
     <div className={s.filterContainer}>
       <div className={s.buttonContainer}>
         <div>
-            Валюта
+          Валюта
         </div>
-        <div>
-          <button>RUB</button>
-          <button>USD</button>
-          <button>EUR</button>
+        <div className={s.buttonItemContainer}>
+          {ButtonsData.map((buttonValue, index) =>
+            <ButtonItem
+              key={index}
+              buttonValue={buttonValue}
+            />,
+          )}
         </div>
       </div>
       <div className={s.checkBoxContainer}>
@@ -18,21 +25,9 @@ export const FilterComponent = () => {
             Колличество пересадок
         </div>
         <div className={s.checkBoxItemContainer}>
-          <span>
-            <input type={'checkbox'}/> Все
-          </span>
-          <span>
-            <input type={'checkbox'}/> Без пересадок
-          </span>
-          <span>
-            <input type={'checkbox'}/> 1 пересадка
-          </span>
-          <span>
-            <input type={'checkbox'}/> 2 пересадки
-          </span>
-          <span>
-            <input type={'checkbox'}/> 3 пересадки
-          </span>
+          {CheckBoxData.map((checkBoxValue, index) =>
+            <CheckBoxItem key={index} checkBoxValue={checkBoxValue}/>,
+          )}
         </div>
       </div>
     </div>
