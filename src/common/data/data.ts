@@ -172,3 +172,10 @@ export const ticketsData: TicketsType[] =
         'price': 17400,
       },
     ];
+//----------------------------------------------
+export type ButtonsType = 'RUB' | 'USD' | 'EUR'
+export const ButtonsData: ButtonsType[] = ['RUB', 'USD', 'EUR'];
+
+//----------------------------------------------
+export type CheckBoxType = 'Все' | 'Без пересадок' | '1 пересадка' | '2 пересадки' | '3 пересадки'
+export const CheckBoxData: CheckBoxType[] = ['Все', 'Без пересадок', '1 пересадка', '2 пересадки', '3 пересадки']
