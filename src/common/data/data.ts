@@ -1,4 +1,25 @@
-export const ticketsData =
+type OriginType = 'VVO' | 'LRN';
+type OriginNameType = 'Владивосток' | 'Ларнака';
+type DestinationType = 'TLV' | 'UFA';
+type DestinationName = 'Тель-Авив' | 'Уфа';
+type CarrierType = 'TK' | 'S7' | 'SU' | 'BA';
+type StopsType = 0 | 1 | 2 | 3;
+
+export type TicketsType = {
+  origin: OriginType;
+  origin_name: OriginNameType;
+  destination: DestinationType;
+  destination_name: DestinationName;
+  departure_date: string;
+  departure_time: string;
+  arrival_date: string;
+  arrival_time: string;
+  carrier: CarrierType;
+  stops: StopsType;
+  price: number;
+}
+
+export const ticketsData: TicketsType[] =
     [
       {
         'origin': 'VVO',
