@@ -1,0 +1,18 @@
+.ticketItemContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 7px;
+    background-color: white;
+
+    .priceContainer {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    .routeDescription {
+        display: flex;
+        justify-content: space-between;
+        flex: 3;
+    }
+}
