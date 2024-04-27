@@ -1,0 +1,27 @@
+.filterContainer {
+    display: flex;
+    flex-direction: column;
+    margin-right: 40px;
+    background-color: white;
+    height: min-content;
+    padding: 7px;
+
+    .buttonContainer {
+        display: flex;
+        flex-direction: column;
+
+        .buttonItemContainer {
+            display: flex;
+        }
+    }
+
+    .checkBoxContainer {
+        display: flex;
+        flex-direction: column;
+
+        .checkBoxItemContainer {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

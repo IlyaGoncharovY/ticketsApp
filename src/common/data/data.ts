@@ -1,4 +1,25 @@
-export const ticketsData =
+type OriginType = 'VVO' | 'LRN';
+type OriginNameType = 'Владивосток' | 'Ларнака';
+type DestinationType = 'TLV' | 'UFA';
+type DestinationName = 'Тель-Авив' | 'Уфа';
+type CarrierType = 'TK' | 'S7' | 'SU' | 'BA';
+type StopsType = 0 | 1 | 2 | 3;
+
+export type TicketsType = {
+  origin: OriginType;
+  origin_name: OriginNameType;
+  destination: DestinationType;
+  destination_name: DestinationName;
+  departure_date: string;
+  departure_time: string;
+  arrival_date: string;
+  arrival_time: string;
+  carrier: CarrierType;
+  stops: StopsType;
+  price: number;
+}
+
+export const ticketsData: TicketsType[] =
     [
       {
         'origin': 'VVO',
@@ -151,3 +172,19 @@ export const ticketsData =
         'price': 17400,
       },
     ];
+//----------------------------------------------
+export type ButtonsType = 'RUB' | 'USD' | 'EUR'
+export const ButtonsData: ButtonsType[] = ['RUB', 'USD', 'EUR'];
+
+//----------------------------------------------
+export type CheckBoxType = {
+  title: 'Все' | 'Без пересадок' | '1 пересадка' | '2 пересадки' | '3 пересадки'
+  stops: -1 | 0 | 1 | 2 | 3
+}
+export const CheckBoxData: CheckBoxType[] = [
+  {title: 'Все', stops: -1},
+  {title: 'Без пересадок', stops: 0},
+  {title: '1 пересадка', stops: 1},
+  {title: '2 пересадки', stops: 2},
+  {title: '3 пересадки', stops: 3},
+];
