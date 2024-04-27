@@ -177,5 +177,14 @@ export type ButtonsType = 'RUB' | 'USD' | 'EUR'
 export const ButtonsData: ButtonsType[] = ['RUB', 'USD', 'EUR'];
 
 //----------------------------------------------
-export type CheckBoxType = 'Все' | 'Без пересадок' | '1 пересадка' | '2 пересадки' | '3 пересадки'
-export const CheckBoxData: CheckBoxType[] = ['Все', 'Без пересадок', '1 пересадка', '2 пересадки', '3 пересадки']
+export type CheckBoxType = {
+  title: 'Все' | 'Без пересадок' | '1 пересадка' | '2 пересадки' | '3 пересадки'
+  stops: -1 | 0 | 1 | 2 | 3
+}
+export const CheckBoxData: CheckBoxType[] = [
+  {title: 'Все', stops: -1},
+  {title: 'Без пересадок', stops: 0},
+  {title: '1 пересадка', stops: 1},
+  {title: '2 пересадки', stops: 2},
+  {title: '3 пересадки', stops: 3},
+];
