@@ -2,7 +2,7 @@ import {ButtonsData, CheckBoxData} from '../../common';
 
 import s from './FilerComponent.module.css';
 import {ButtonItem} from './item/ButtonItem.tsx';
-import {CheckBoxItem} from "./item/CheckBoxItem.tsx";
+import {CheckBoxItem} from './item/CheckBoxItem.tsx';
 
 export const FilterComponent = () => {
   return (
