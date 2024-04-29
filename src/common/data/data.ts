@@ -175,7 +175,6 @@ export const ticketsData: TicketsType[] =
 //----------------------------------------------
 export type ButtonsType = 'RUB' | 'USD' | 'EUR'
 export const ButtonsData: ButtonsType[] = ['RUB', 'USD', 'EUR'];
-
 //----------------------------------------------
 export type CheckBoxType = {
   title: 'Все' | 'Без пересадок' | '1 пересадка' | '2 пересадки' | '3 пересадки'
