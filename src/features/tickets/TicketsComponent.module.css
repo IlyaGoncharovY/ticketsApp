@@ -1,5 +1,6 @@
 .ticketsContainer {
     display: flex;
     flex-direction: column;
+    width: 70%;
     gap: 15px;
 }

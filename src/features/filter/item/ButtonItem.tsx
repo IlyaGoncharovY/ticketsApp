@@ -13,6 +13,7 @@ export const ButtonItem: FC<IButtonItem> = ({buttonValue}) => {
 
   const {
     data: valutes,
+    isLoading,
   } = apiFilterSlice.useGetCurrencyExchangeRatesQuery();
 
   const dispatch = useAppDispatch();
@@ -27,7 +28,10 @@ export const ButtonItem: FC<IButtonItem> = ({buttonValue}) => {
 
   return (
     <div>
-      <button onClick={() => onClickChangeCurrencies(buttonValue)}>
+      <button
+        onClick={() => onClickChangeCurrencies(buttonValue)}
+        disabled={isLoading}
+      >
         {buttonValue}
       </button>
     </div>
