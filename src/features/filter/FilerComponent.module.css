@@ -5,6 +5,7 @@
     background-color: white;
     height: min-content;
     padding: 7px;
+    border-radius: 7px;
 
     .buttonContainer {
         display: flex;
