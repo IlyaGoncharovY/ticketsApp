@@ -5,11 +5,13 @@ import {ticketsData, TicketsType} from '../../../common';
 interface initialStateType {
     tickets: TicketsType[];
     selectedFilters: number[];
+    currencyRate: number;
 }
 
 const initialState: initialStateType = {
   tickets: ticketsData,
   selectedFilters: [],
+  currencyRate: 1,
 };
 
 const TicketsSlice = createSlice({
@@ -24,8 +26,23 @@ const TicketsSlice = createSlice({
         state.tickets = ticketsData.filter(ticket => state.selectedFilters.includes(ticket.stops));
       }
     },
+    changeCurrencies: (state, action: PayloadAction<number>) => {
+      if (action.payload !== state.currencyRate) {
+        const newCurrencyRate = action.payload;
+        const oldCurrencyRate = state.currencyRate;
+
+        state.tickets.forEach(ticket => {
+          ticket.price = Math.round(ticket.price * (newCurrencyRate / oldCurrencyRate));
+        });
+
+        state.currencyRate = newCurrencyRate ;
+      }
+    },
   },
 });
-export const {ticketSelection} = TicketsSlice.actions;
+export const {
+  ticketSelection,
+  changeCurrencies,
+} = TicketsSlice.actions;
 
 export default TicketsSlice.reducer;
