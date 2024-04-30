@@ -1,8 +1,11 @@
 import {useAppSelector} from '../../store';
 
-import s from './FilterComponent.module.css';
+import {UniversalTitle} from '../../common';
+
 import {ButtonItem} from './item/button/ButtonItem.tsx';
 import {CheckBoxItem} from './item/checkbox/CheckBoxItem.tsx';
+
+import s from './FilterComponent.module.css';
 
 export const FilterComponent = () => {
 
@@ -12,9 +15,7 @@ export const FilterComponent = () => {
   return (
     <div className={s.filterContainer}>
       <div className={s.buttonContainer}>
-        <div>
-          Валюта
-        </div>
+        <UniversalTitle title={'Валюта'}/>
         <div className={s.buttonItemContainer}>
           {buttonsArr.map((buttonValue, index) =>
             <ButtonItem
@@ -25,12 +26,13 @@ export const FilterComponent = () => {
         </div>
       </div>
       <div className={s.checkBoxContainer}>
-        <div>
-            Колличество пересадок
-        </div>
+        <UniversalTitle title={'Колличество пересадок'}/>
         <div className={s.checkBoxItemContainer}>
           {checkboxArr.map((checkBoxValue, index) =>
-            <CheckBoxItem key={index} checkBoxValue={checkBoxValue}/>,
+            <CheckBoxItem
+              key={index}
+              checkBoxValue={checkBoxValue}
+            />,
           )}
         </div>
       </div>
