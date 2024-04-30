@@ -4,7 +4,7 @@ import {TicketsComponent} from '../tickets';
 
 import s from './App.module.css';
 
-export function App() {
+export const App = () => {
 
   return (
     <div className={s.appContainer}>
@@ -15,4 +15,4 @@ export function App() {
       </div>
     </div>
   );
-}
+};
