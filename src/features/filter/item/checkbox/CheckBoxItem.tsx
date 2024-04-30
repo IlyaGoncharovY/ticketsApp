@@ -46,13 +46,15 @@ export const CheckBoxItem: FC<ICheckBoxItem> = ({checkBoxValue}) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div className={s.checkBocChild}>
+      <label className={s.checkBocChild}>
         <input
           type={'checkbox'}
           checked={isChecked}
           disabled={isDisabled}
           onChange={() => checkBoxHandler(checkBoxValue.stops, checkBoxValue.id)}
+          className={s.originCheckbox}
         />
+        <div className={s.fakeCheckbox}/>
         <span>
           {checkBoxValue.title}
         </span>
@@ -64,7 +66,7 @@ export const CheckBoxItem: FC<ICheckBoxItem> = ({checkBoxValue}) => {
             только
           </UniversalButton>
         </span>}
-      </div>
+      </label>
     </div>
   );
 };
