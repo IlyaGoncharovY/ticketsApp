@@ -1,15 +1,19 @@
 .appContainer {
-    height: 100%;
+    min-height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
     gap: 40px;
-    background-color: #b7b5b5;
+    background-color: #dedcdc;
+    padding: 10px;
 
     .ticketParent {
         display: flex;
         justify-content: space-between;
         width: 60%;
     }
+}
+
+body {
+    margin: 0;
 }
