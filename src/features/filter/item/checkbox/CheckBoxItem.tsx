@@ -1,6 +1,6 @@
-import {FC, useState} from 'react';
+import {FC, useCallback, useState} from 'react';
 
-import {CheckBoxData, CheckBoxType} from '../../../../common';
+import {CheckBoxData, CheckBoxType, UniversalButton} from '../../../../common';
 import {useAppDispatch, useAppSelector} from '../../../../store';
 import {ticketSelection} from '../../../tickets/reducer/TicketsReducer.ts';
 
@@ -18,21 +18,21 @@ export const CheckBoxItem: FC<ICheckBoxItem> = ({checkBoxValue}) => {
 
   const dispatch = useAppDispatch();
 
-  const checkBoxHandler = (stops: number, checkBoxId: number) => {
+  const checkBoxHandler = useCallback((stops: number, checkBoxId: number) => {
     const currentFilters = selectedFilters.includes(stops)
       ? selectedFilters.filter(filter => filter !== stops)
       : [...selectedFilters, stops];
     dispatch(ticketSelection(currentFilters));
     dispatch(changeCheckBoxStatus(checkBoxId));
-  };
+  },[dispatch, selectedFilters]);
 
-  const onClickHandler = (checkBoxId: number) => {
+  const onClickHandler = useCallback((checkBoxId: number) => {
     const correspondingCheckBox = CheckBoxData.find(item => item.id === checkBoxId);
     if (correspondingCheckBox) {
       dispatch(ticketSelection([correspondingCheckBox.stops]));
       dispatch(changeCheckBoxStatus(checkBoxId));
     }
-  };
+  }, [dispatch]);
 
   const handleMouseEnter = () => setText(true);
   const handleMouseLeave = () => setText(false);
@@ -57,10 +57,13 @@ export const CheckBoxItem: FC<ICheckBoxItem> = ({checkBoxValue}) => {
           {checkBoxValue.title}
         </span>
         {text && <span className={s.onlyText}>
-          <button
-            disabled={isDisabled}
+          <UniversalButton
             onClick={() => onClickHandler(checkBoxValue.id)}
-          >только</button>
+            valueForOnClick={checkBoxValue.id}
+            disabled={isDisabled}
+          >
+            только
+          </UniversalButton>
         </span>}
       </div>
     </div>

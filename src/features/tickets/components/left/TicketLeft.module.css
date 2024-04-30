@@ -1,0 +1,26 @@
+.ticketLeftContainer {
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #c0bebe;
+    padding: 5px 9px 5px 3px;
+
+    .logo {
+        width: 150px;
+        height: 80px;
+    }
+
+    .buttonContainer {
+        display: flex;
+        flex-direction: column;
+
+        .buttonItem {
+            width: 100%;
+            background-color: #ff5900;
+            border: none;
+            border-radius: 7px;
+            padding: 10px;
+            color: white;
+            cursor: pointer;
+        }
+    }
+}

@@ -1,15 +1,15 @@
-type OriginType = 'VVO' | 'LRN';
-type OriginNameType = 'Владивосток' | 'Ларнака';
-type DestinationType = 'TLV' | 'UFA';
-type DestinationName = 'Тель-Авив' | 'Уфа';
-type CarrierType = 'TK' | 'S7' | 'SU' | 'BA';
-type StopsType = 0 | 1 | 2 | 3;
+export type OriginType = 'VVO' | 'LRN';
+export type OriginNameType = 'Владивосток' | 'Ларнака';
+export type DestinationType = 'TLV' | 'UFA';
+export type DestinationNameType = 'Тель-Авив' | 'Уфа';
+export type CarrierType = 'TK' | 'S7' | 'SU' | 'BA';
+export type StopsType = 0 | 1 | 2 | 3;
 
 export type TicketsType = {
   origin: OriginType;
   origin_name: OriginNameType;
   destination: DestinationType;
-  destination_name: DestinationName;
+  destination_name: DestinationNameType;
   departure_date: string;
   departure_time: string;
   arrival_date: string;

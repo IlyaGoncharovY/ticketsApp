@@ -1,10 +1,10 @@
 import headerLogo from '../../assets/airplanLogo.png';
 
+import s from './Header.module.css';
+
 export const HeaderComponent = () => {
   return (
-    <div style={{
-      marginTop: '20px',
-    }}>
+    <div className={s.headerContainer}>
       <img
         src={headerLogo}
         alt="header logo"
