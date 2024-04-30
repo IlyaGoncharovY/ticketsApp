@@ -56,11 +56,10 @@ export const CheckBoxItem: FC<ICheckBoxItem> = ({checkBoxValue}) => {
         <span>
           {checkBoxValue.title}
         </span>
-        {text && <span className={s.onlyText}>
+        {text && <span className={`${s.onlyText} ${isDisabled ? s.onlyTextDisabled : ''}`}>
           <UniversalButton
             onClick={() => onClickHandler(checkBoxValue.id)}
             valueForOnClick={checkBoxValue.id}
-            disabled={isDisabled}
           >
             только
           </UniversalButton>

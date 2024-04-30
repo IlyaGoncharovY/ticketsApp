@@ -4,7 +4,6 @@ interface IUniversalButton {
     children: ReactNode
     onClick: (value: number) => void
     valueForOnClick: number
-    disabled?: boolean
     style?: string
 }
 
@@ -13,7 +12,6 @@ interface IUniversalButton {
  * @param children
  * @param onClick
  * @param valueForOnClick
- * @param disabled
  * @param style
  * @constructor
  */
@@ -21,13 +19,11 @@ export const UniversalButton:FC<IUniversalButton> = ({
   children,
   onClick,
   valueForOnClick,
-  disabled,
   style,
 }) => {
   return (
     <>
       <button
-        disabled={disabled}
         onClick={() => onClick(valueForOnClick)}
         className={style}
       >
