@@ -1,0 +1,30 @@
+.checkboxParentContainer {
+    height: 100%;
+
+    .checkBocChild {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #e6e6fc;
+            height: 100%;
+        }
+
+        span {
+            flex: 1;
+        }
+
+        .onlyText {
+            display: flex;
+            align-items: center;
+        }
+
+        .onlyText button {
+            margin-left: auto;
+            border-color: #7eaafd;
+            background-color: #e6e6fc;
+            color: #7e7efd;
+        }
+    }
+}

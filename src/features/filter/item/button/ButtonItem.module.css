@@ -1,0 +1,22 @@
+.buttonItemContainer {
+    width: 100%;
+
+    .button {
+        width: 100%;
+        cursor: pointer;
+        padding: 7px;
+        background-color: white;
+        color: #7e7efd;
+        border: 1px solid #7e7efd;
+        border-radius: 2px;
+
+        &:hover{
+            background-color: #e6e6fc;
+        }
+    }
+
+    .buttonActive {
+        background-color: #7e7efd;
+        color: white;
+    }
+}
