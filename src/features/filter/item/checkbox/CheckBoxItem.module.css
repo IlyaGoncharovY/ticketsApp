@@ -22,9 +22,13 @@
 
         .onlyText button {
             margin-left: auto;
-            border-color: #7eaafd;
+            cursor: pointer;
+            border: none;
             background-color: #e6e6fc;
             color: #7e7efd;
+        }
+        .onlyTextDisabled button {
+            cursor: no-drop;
         }
     }
 }
