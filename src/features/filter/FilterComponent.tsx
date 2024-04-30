@@ -1,10 +1,14 @@
-import {ButtonsData, CheckBoxData} from '../../common';
+import {useAppSelector} from '../../store';
 
-import s from './FilerComponent.module.css';
-import {ButtonItem} from './item/ButtonItem.tsx';
-import {CheckBoxItem} from './item/CheckBoxItem.tsx';
+import s from './FilterComponent.module.css';
+import {ButtonItem} from './item/button/ButtonItem.tsx';
+import {CheckBoxItem} from './item/checkbox/CheckBoxItem.tsx';
 
 export const FilterComponent = () => {
+
+  const buttonsArr = useAppSelector(state => state.filterReducer.buttonsArr);
+  const checkboxArr = useAppSelector(state => state.filterReducer.checkboxArr);
+
   return (
     <div className={s.filterContainer}>
       <div className={s.buttonContainer}>
@@ -12,7 +16,7 @@ export const FilterComponent = () => {
           Валюта
         </div>
         <div className={s.buttonItemContainer}>
-          {ButtonsData.map((buttonValue, index) =>
+          {buttonsArr.map((buttonValue, index) =>
             <ButtonItem
               key={index}
               buttonValue={buttonValue}
@@ -25,7 +29,7 @@ export const FilterComponent = () => {
             Колличество пересадок
         </div>
         <div className={s.checkBoxItemContainer}>
-          {CheckBoxData.map((checkBoxValue, index) =>
+          {checkboxArr.map((checkBoxValue, index) =>
             <CheckBoxItem key={index} checkBoxValue={checkBoxValue}/>,
           )}
         </div>
