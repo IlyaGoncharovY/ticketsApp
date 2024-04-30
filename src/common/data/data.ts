@@ -173,17 +173,28 @@ export const ticketsData: TicketsType[] =
       },
     ];
 //----------------------------------------------
-export type ButtonsType = 'RUB' | 'USD' | 'EUR'
-export const ButtonsData: ButtonsType[] = ['RUB', 'USD', 'EUR'];
+export type ButtonsTitleType = 'RUB' | 'USD' | 'EUR'
+export type ButtonsType = {
+  id: number
+  title: ButtonsTitleType
+  isCheck: boolean
+}
+export const ButtonsData: ButtonsType[] = [
+  {id: 1, title: 'RUB', isCheck: false},
+  {id: 2, title: 'USD', isCheck: false},
+  {id: 3, title: 'EUR', isCheck: false},
+];
 //----------------------------------------------
 export type CheckBoxType = {
+  id: number
   title: 'Все' | 'Без пересадок' | '1 пересадка' | '2 пересадки' | '3 пересадки'
   stops: -1 | 0 | 1 | 2 | 3
+  isCheck: boolean
 }
 export const CheckBoxData: CheckBoxType[] = [
-  {title: 'Все', stops: -1},
-  {title: 'Без пересадок', stops: 0},
-  {title: '1 пересадка', stops: 1},
-  {title: '2 пересадки', stops: 2},
-  {title: '3 пересадки', stops: 3},
+  {id: 1, title: 'Все', stops: -1, isCheck: false},
+  {id: 2, title: 'Без пересадок', stops: 0, isCheck: false},
+  {id: 3, title: '1 пересадка', stops: 1, isCheck: false},
+  {id: 4, title: '2 пересадки', stops: 2, isCheck: false},
+  {id: 5, title: '3 пересадки', stops: 3, isCheck: false},
 ];

@@ -1,10 +1,13 @@
 import {Action, combineReducers, configureStore, ThunkAction} from '@reduxjs/toolkit';
 
 import ticketsReducer from '../features/tickets/reducer/TicketsReducer.ts';
-import {apiFilterSlice} from '../features/filter';
+import {apiFilterSlice} from '../features/filter/api/apiFilter.ts';
+import FilterReducer from '../features/filter/reducer/FilterReducer.ts';
+
 
 const rootReducer = combineReducers({
   ticketsReducer: ticketsReducer,
+  filterReducer: FilterReducer,
   [apiFilterSlice.reducerPath]: apiFilterSlice.reducer,
 });
 

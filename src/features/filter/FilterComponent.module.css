@@ -4,6 +4,7 @@
     margin-right: 40px;
     background-color: white;
     height: min-content;
+    width: 240px;
     padding: 7px;
     border-radius: 7px;
 
@@ -13,16 +14,20 @@
 
         .buttonItemContainer {
             display: flex;
+            justify-content: center;
+            margin-top: 10px;
         }
     }
 
     .checkBoxContainer {
         display: flex;
         flex-direction: column;
+        margin-top: 20px;
 
         .checkBoxItemContainer {
             display: flex;
             flex-direction: column;
+            margin-top: 10px;
         }
     }
 }

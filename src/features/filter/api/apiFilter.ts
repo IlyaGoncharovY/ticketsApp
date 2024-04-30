@@ -2,7 +2,6 @@ import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
 
 const URL = 'https://www.cbr-xml-daily.ru/';
 
-
 export type RootObjectType = {
 	Date: string;
 	PreviousDate: string;
