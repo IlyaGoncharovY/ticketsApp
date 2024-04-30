@@ -23,6 +23,10 @@ interface ITicketItem {
 
 export const TicketItem: FC<ITicketItem> = ({ticket}) => {
 
+  const onClickHandler = (price: number) => {
+    alert(`цена за перелёт: ${price} рублей`);
+  };
+
   return (
     <div className={s.ticketItemContainer}>
       <div className={s.priceContainer}>
@@ -34,7 +38,10 @@ export const TicketItem: FC<ITicketItem> = ({ticket}) => {
           />
         </div>
         <div className={s.buttonContainer}>
-          <button className={s.buttonItem}>
+          <button
+            className={s.buttonItem}
+            onClick={() => onClickHandler(ticket.price)}
+          >
             <div>
               <div>Купить</div>
               <div>за {ticket.price}</div>
