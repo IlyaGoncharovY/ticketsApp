@@ -23,15 +23,16 @@
             position: relative;
 
             &:before {
-                content: 'v';
+                content: '';
+                background: url("../../../../assets/checkimg.png");
+                background-size: cover;
                 position: absolute;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
                 display: block;
                 width: 10px;
-                height: 20px;
-                color: blue;
+                height: 10px;
                 opacity: 0;
                 transition: opacity 0.2s;
             }
@@ -60,9 +61,11 @@
         }
     }
 }
+
 .checkBocChild input[type='checkbox']:checked + .fakeCheckbox::before {
     opacity: 1;
 }
+
 .checkBocChild input[type='checkbox']:disabled + .fakeCheckbox::before {
     cursor: no-drop;
 }
