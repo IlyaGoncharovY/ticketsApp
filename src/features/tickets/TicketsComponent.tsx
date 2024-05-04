@@ -10,9 +10,11 @@ export const TicketsComponent = memo(() => {
 
   const tickets = useAppSelector(state => state.ticketsReducer.tickets);
 
+  const sortedTickets = [...tickets].sort((a, b) => a.price - b.price);
+
   return (
     <div className={s.ticketsContainer}>
-      {tickets.map((ticket, index) =>
+      {sortedTickets.map((ticket, index) =>
         <TicketItem
           key={`${index}-${ticket.destination}`}
           ticket={ticket}
