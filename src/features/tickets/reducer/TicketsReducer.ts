@@ -2,7 +2,7 @@ import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 
 import {ticketsData, TicketsType} from '../../../common';
 
-interface initialStateType {
+export interface initialStateType {
     tickets: TicketsType[];
     selectedFilters: number[];
     currencyRate: number;
@@ -32,7 +32,7 @@ const TicketsSlice = createSlice({
         const oldCurrencyRate = state.currencyRate;
 
         state.tickets.forEach(ticket => {
-          ticket.price = Math.round(ticket.price * (newCurrencyRate / oldCurrencyRate));
+          ticket.price = Math.round(ticket.price / (newCurrencyRate / oldCurrencyRate));
         });
 
         state.currencyRate = newCurrencyRate ;
