@@ -8,6 +8,10 @@
     padding: 7px;
     border-radius: 7px;
 
+    @media only screen and (max-width: 830px) {
+        margin-right: 0px;
+    }
+
     .buttonContainer {
         display: flex;
         flex-direction: column;

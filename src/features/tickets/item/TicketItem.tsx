@@ -28,6 +28,7 @@ export const TicketItem: FC<ITicketItem> = memo(({ticket}) => {
         arrival_time={ticket.arrival_time}
         destination_name={ticket.destination_name}
         destination={ticket.destination}
+        arrival_date={ticket.arrival_date}
       />
     </div>
   );
