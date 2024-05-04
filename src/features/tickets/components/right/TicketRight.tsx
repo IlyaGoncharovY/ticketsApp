@@ -19,7 +19,7 @@ interface ITicketRight {
     arrival_time: string
     destination_name: DestinationNameType
     destination: DestinationType
-
+    arrival_date: string
 }
 
 /**
@@ -32,6 +32,7 @@ interface ITicketRight {
  * @param arrival_time
  * @param destination_name
  * @param destination
+ * @param arrival_date
  * @constructor
  */
 export const TicketRight:FC<ITicketRight> = ({
@@ -43,6 +44,7 @@ export const TicketRight:FC<ITicketRight> = ({
   arrival_time,
   destination_name,
   destination,
+  arrival_date,
 }) => {
   return (
     <>
@@ -75,7 +77,7 @@ export const TicketRight:FC<ITicketRight> = ({
           {destination_name}, {destination}
         </div>
         <div className={s.commonOpacity}>
-          {arrival_time}, ПТ
+          {arrival_date}, ПТ
         </div>
       </div>
     </>
