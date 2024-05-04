@@ -65,8 +65,7 @@ export const TicketRight:FC<ITicketRight> = ({
         </div>
         <img
           src={airLine} alt="line air"
-          width={'190px'}
-          className={s.commonOpacity}
+          className={`${s.commonOpacity} ${s.img}`}
         />
       </div>
       <div>
