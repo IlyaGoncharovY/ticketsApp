@@ -1,10 +1,8 @@
-import {FC, useCallback, useState} from 'react';
+import {FC, useState} from 'react';
 
-import {CheckBoxData, CheckBoxType, UniversalButton} from '../../../../common';
-import {useAppDispatch, useAppSelector} from '../../../../store';
-import {ticketSelection} from '../../../tickets/reducer/TicketsReducer.ts';
-
-import {changeCheckBoxStatus} from '../../reducer/FilterReducer.ts';
+import {useAppSelector} from '../../../../store';
+import {useCheckBoxItem} from '../../hook/useCheckBoxItem.ts';
+import {CheckBoxType, UniversalButton} from '../../../../common';
 
 import s from './CheckBoxItem.module.css';
 
@@ -15,24 +13,7 @@ interface ICheckBoxItem {
 export const CheckBoxItem: FC<ICheckBoxItem> = ({checkBoxValue}) => {
   const selectedFilters = useAppSelector(state => state.ticketsReducer.selectedFilters);
   const [text, setText] = useState<boolean>(false);
-
-  const dispatch = useAppDispatch();
-
-  const checkBoxHandler = useCallback((stops: number, checkBoxId: number) => {
-    const currentFilters = selectedFilters.includes(stops)
-      ? selectedFilters.filter(filter => filter !== stops)
-      : [...selectedFilters, stops];
-    dispatch(ticketSelection(currentFilters));
-    dispatch(changeCheckBoxStatus(checkBoxId));
-  },[dispatch, selectedFilters]);
-
-  const onClickHandler = useCallback((checkBoxId: number) => {
-    const correspondingCheckBox = CheckBoxData.find(item => item.id === checkBoxId);
-    if (correspondingCheckBox) {
-      dispatch(ticketSelection([correspondingCheckBox.stops]));
-      dispatch(changeCheckBoxStatus(checkBoxId));
-    }
-  }, [dispatch]);
+  const {onClickHandler, handleCheckboxChange} = useCheckBoxItem(selectedFilters, checkBoxValue);
 
   const handleMouseEnter = () => setText(true);
   const handleMouseLeave = () => setText(false);
@@ -51,7 +32,7 @@ export const CheckBoxItem: FC<ICheckBoxItem> = ({checkBoxValue}) => {
           type={'checkbox'}
           checked={isChecked}
           disabled={isDisabled}
-          onChange={() => checkBoxHandler(checkBoxValue.stops, checkBoxValue.id)}
+          onChange={() => handleCheckboxChange(checkBoxValue.stops, checkBoxValue.id)}
           className={s.originCheckbox}
         />
         <div className={s.fakeCheckbox}/>
