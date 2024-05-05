@@ -19,21 +19,27 @@ const LOGO_DATA = {
 interface ITicketLeft {
     carrier: CarrierType
     price: number
+    departure_time: string
+    departure_date: string
 }
 
 /**
  * component for render left part TicketItem
  * @param carrier
  * @param price
+ * @param departure_time
+ * @param departure_date
  * @constructor
  */
 export const TicketLeft:FC<ITicketLeft> = ({
   carrier,
   price,
+  departure_time,
+  departure_date,
 }) => {
 
-  const onClickHandler = (price: number) => {
-    alert(`цена за перелёт: ${price} рублей`);
+  const onClickHandler = (departure_date:string, departure_time: string) => {
+    alert(`Приобретён билет! дата вылета: ${departure_date}, время: ${departure_time}`);
   };
 
   return (
@@ -47,7 +53,7 @@ export const TicketLeft:FC<ITicketLeft> = ({
       </div>
       <div className={s.buttonContainer}>
         <UniversalButton
-          onClick={() => onClickHandler(price)}
+          onClick={() => onClickHandler(departure_date, departure_time)}
           valueForOnClick={price}
           style={s.buttonItem}
         >
