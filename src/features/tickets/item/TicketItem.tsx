@@ -18,6 +18,8 @@ export const TicketItem: FC<ITicketItem> = memo(({ticket}) => {
       <TicketLeft
         carrier={ticket.carrier}
         price={ticket.price}
+        departure_time={ticket.departure_time}
+        departure_date={ticket.departure_date}
       />
       <TicketRight
         departure_time={ticket.departure_time}
